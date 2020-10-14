@@ -14,7 +14,41 @@
         }
     </style>
     <script>
-        /* TODO complete this part */
+       function checkPass()
+{
+    var pass1 = document.getElementById('password1');
+    var pass2 = document.getElementById('password2');
+    var message = document.getElementById('pass');
+    var valiedcolor = "#66cc66";
+    var unvaliedcolor = "#ff6666";
+ 	
+    if(password1.value.length > 5)
+    {
+        password1.style.backgroundColor =valiedcolor;
+        message.style.color = valiedcolor;
+        message.innerHTML = "character number ok!"
+    }
+    else
+    {
+        password1.style.backgroundColor = unvaliedcolor;
+        message.style.color = unvaliedcolor;
+        message.innerHTML = " you have to enter at least 6 digit!"
+        return;
+    }
+  
+    if(password1.value == password2.value)
+    {
+        password2.style.backgroundColor = valiedcolor;
+        message.style.color = valiedcolor;
+        message.innerHTML = "ok!"
+    }
+	else
+    {
+        password2.style.backgroundColor = unvaliedcolor;
+        message.style.color = unvaliedcolor;
+        message.innerHTML = " These passwords don't match"
+    }
+}  
     </script>
 </head>
 <body>
@@ -23,14 +57,14 @@
     <table>
         <tr>
             <td>Password (min 6 characters):</td>
-            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password"></td>
+            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password" onkeyup="checkPass(); return false;"></td>
             <td>
                 <div id="pw1_check" class="err"></div>
             </td>
         </tr>
         <tr>
             <td>Repeat password:</td>
-            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"></td>
+            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password" onkeyup="checkPass(); return false;"></td>
             <td>
                 <div id="pw2_check" class="err"></div>
             </td>
@@ -38,8 +72,8 @@
     </table>
 
     <input type="submit" value="Submit" id="submitBtn"/>
+    <div id="pass" class="err"></div>
 </form>
 
 </body>
 </html>
-

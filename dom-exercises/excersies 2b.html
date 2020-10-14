@@ -15,21 +15,14 @@
 </head>
 <body>
     
-<div id="mydiv" onclick="button_click();" ></div>
+<div id="mydiv" onclick="button_click();"></div>
 
 <script>
-    var colors=["blue" ,"red" ,"green","blue"];
-    var i=0;
-    var color;
+    var colors=["blue" ,"red" ,"green","yellow","blue"];
+   
     function button_click() {
-    color= colors[i];
-
-    document.getElementById("mydiv").style.backgroundColor = color;
-        i++;
-        if(i > colors.length)
-            i = 0;}
-
-
+    
+    mydiv.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];}
 
     
     

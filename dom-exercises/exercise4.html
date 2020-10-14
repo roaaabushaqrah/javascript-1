@@ -17,14 +17,14 @@
 </head>
 <body>
 <form name="form">
-    <select name="font_family" id="font_family">
+    <select name="font_family" id="font_family" onchange="Mychoice"> 
         <option value="Arial" selected>Arial</option>
         <option value="Verdana">Verdana</option>
         <option value="Helvetica">Helvetica</option>
         <option value="Times New Roman">Times New Roman</option>
         <option value="Courier New">Courier New</option>
     </select>
-    <select name="font_size" id="font_size">
+    <select name="font_size" id="font_size" onchange="mysize">
         <option value="8pt">8pt</option>
         <option value="10pt">10pt</option>
         <option value="12pt" selected>12pt</option>
@@ -35,7 +35,14 @@
     <label>Bold <input type="checkbox" name="font_bold" id="font_bold"></label>
     <label>Underline <input type="checkbox" name="font_underline" id="font_underline"></label>
 </form>
-
 <div id="text">The quick brown fox jumps over the lazy dog</div>
+<script>
+    function Mychoice(){var x= document.getElementById("font_family").value;
+    document.getElementById("text").innerHTML=x; }
+
+    function mysize(){var y= document.getElementById("font_size").value;
+    document.getElementById("text").innerHTML=y; }
+</script>
+
 </body>
 </html>
