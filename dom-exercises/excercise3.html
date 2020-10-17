@@ -1,15 +1,27 @@
 <html>
     <head>
+        <script>
+            function myimag(){
+                var x=document.getElementById("img").value;
+                if(x=="img"){
+                    document.getElementById("images").src="images.png"
+                    document.getElementById("images").alt="noimage"
+                }else{document.getElementById("images").src="flag.png"}
+            }
+        </script>
         </head>
         <body>
            <!--img src="800px-Flag_of_Norway.svg.png">--> 
-           <select> 
+           <select name="images"id="img" onchange="myimag()"> 
 
-            <option>narway </option>
+            <option value="image" alt="noimage" >select</option>
+    
+            <option  value="image2" alt="narway flag"><Narway/option>
             
         </select>
+        <img id="img" src="" alt="">
 </body>
-<img src ="images.png">
+
            
                 
 </html>

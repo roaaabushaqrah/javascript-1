@@ -20,7 +20,7 @@
     var pass2 = document.getElementById('password2');
     var message = document.getElementById('pass');
     var valiedcolor = "#66cc66";
-    var unvaliedcolor = "#ff6666";
+    var invaliedcolor = "#ff6666";
  	
     if(password1.value.length > 5)
     {
@@ -30,8 +30,8 @@
     }
     else
     {
-        password1.style.backgroundColor = unvaliedcolor;
-        message.style.color = unvaliedcolor;
+        password1.style.backgroundColor = invaliedcolor;
+        message.style.color = invaliedcolor;
         message.innerHTML = " you have to enter at least 6 digit!"
         return;
     }
