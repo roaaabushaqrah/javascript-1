@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Exercise #4: Formatting text</title>
@@ -15,65 +16,61 @@
         }
     </style>
 </head>
+
 <body>
-<form name="form">
-    <select name="font_family" id="font_family" onchange="myFunction(this)"> 
+    <form name="form">
+        <select name="font_family" id="font_family" onchange="myFunction()"> 
         <option value="Arial" selected>Arial</option>
         <option value="Verdana">Verdana</option>
         <option value="Helvetica">Helvetica</option>
         <option value="Times New Roman">Times New Roman</option>
         <option value="Courier New">Courier New</option>
     </select>
-    
-    <select name="font_size" id="font_size" onchange="mysize(this)">
+
+        <select name="font_size" id="font_size" onchange="mysize()">
         <option value="8pt">8pt</option>
         <option value="10pt">10pt</option>
         <option value="12pt" selected>12pt</option>
         <option value="14pt">14pt</option>
         <option value="16pt">16pt</option>
     </select>
-    <label>Italic <input type="checkbox" name="font_italic" id="font_italic"
+        <label>Italic <input type="checkbox" name="font_italic" id="font_italic"  onclick="Italic()"
         ></label>
-    <label>Bold <input type="checkbox" name="font_bold" id="font_bold" onclick="fontbold()"></label>
-    <label>Underline <input type="checkbox" name="font_underline" id="font_underline" onclick="undLine()"></label>
-</form>
-<div id="text">The quick brown fox jumps over the lazy dog</div>
+        <label>Bold <input type="checkbox" name="font_bold" id="font_bold" onclick="fontbold()"></label>
+        <label>Underline <input type="checkbox" name="font_underline" id="font_underline" onclick="undrLine()"></label>
+    </form>
+    <div id="text">The quick brown fox jumps over the lazy dog</div>
 
     <script>
-        
-    function myFunction(selectTag) {
-  var listValue = selectTag.options[selectTag.selectedIndex].text;
-  document.getElementById("text").style.fontFamily = listValue;
-}
+        var sel = document.getElementById("text");
 
-function mysize(selectTag) {
-  var listValue = selectTag.options[selectTag.selectedIndex].text;
-  document.getElementById("text").style.fontSize= listValue;
-}
+        function myFunction() {
+
+            sel.style.fontFamily = document.getElementById("font_family").value;
+        }
 
 
 
-var x=document.getElementById('text');
-        var y=document.getElementById('font_italic');
-        var z=document.getElementById('bold');
-        var f=document.getElementById('font_underline');
-        var t=selectTag.options[selectTag.selectedIndex].text;
-        var s=selectTag.options[selectTag.selectIndex].text;
-function fontbold(){if(z.checked==true){x.style.fontweight="bold";
-}else{x.style.fontweight="normal";}
-}
 
-function undLine(){if(f.checked==true){x.style.textDecoration="underline";
-}else{x.style.textDecoration="none";}
 
-function fontType(selectTag){
-    x.style.fontfamily=t;
-}
-function fontType(selectTag){
-    x.style.fontSize=s;
-}
 
-</script>
+        function mysize() {
+            sel.style.fontSize = document.getElementById("font_size").value;
+        }
+
+        function Italic() {
+            sel.style.fontStyle = "italic";
+        }
+
+        function fontbold() {
+            sel.style.fontWeight = "bold";
+        }
+
+        function underline() {
+            sel.style.textDecoration = "underline";
+        }
+    </script>
 
 </body>
+
 </html>

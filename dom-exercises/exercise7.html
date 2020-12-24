@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Exercise #7: Simple playlist</title>
     <link rel="stylesheet" href="exercise7.css">
-    <script>
-      function additem(){
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("songTextInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("playlist").appendChild(li);
-  }
-  document.getElementById("songTextInput").value = "";
 
-  
-  var span = document.createElement("input");
-  var txt = document.createTextNode("\u00D7");
-  input.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-  
-  li.appendChild(button);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
-    </script>
 </head>
+
 <body>
 
-<form>
-    <input type="text" id="songTextInput" size="40" placeholder="Song name">
-    <button id="addButton" value="Add Song"  onclick="additem()" class="addBtn"> add</button>
-</form>
+    <form>
+        <input type="text" id="songTextInput" size="40" placeholder="Song name">
+        <button id="addButton" value="Add Song" onclick="additem()" class="addBtn"> add</button>
+    </form>
 
-<ul id="playlist">
-    <li>buy some milk</li>
-    <li>do your home work</li>
-</ul>
+    <ul id="playlist">
+        <li>buy some milk</li>
+        <li>do your home work</li>
+    </ul>
+    <script>
+        function additem() {
 
+            var list = document.getElementById("playlist");
+            var node = document.createElement("li")
+
+            var inp = document.getElementById("songTextInput").value;
+
+            list.appendChild(node);
+            inp.appendChild(li);
+        };
+    </script>
 </body>
-</html>
 
+</html>
